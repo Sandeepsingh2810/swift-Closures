@@ -66,4 +66,26 @@ print(asce)
 
 
 
+// Escaping
 
+func call(completion: @escaping (_: Bool) -> Void) {
+   // sleep(3)
+    completion(false)
+}
+print("START")
+call { (flag) in
+print("inside block",flag)
+}
+print("END")
+
+func moreSUM( sumFunc: @escaping (_: Int ) -> Void)
+{
+    for x in 1...10
+    {
+   sumFunc(x)
+        sleep(2)
+}
+}
+moreSUM { (y) in
+print(y)
+}
